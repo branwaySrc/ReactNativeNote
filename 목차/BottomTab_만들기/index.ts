@@ -14,8 +14,9 @@ interface MainStack extends SvgName {
 /**
  * @BottomNavigation
  * * 바텀 네비게이션을 만들때, 각 Screen을 배열에 담아 Map 함수를 통해 동일한 관리가 가능하다.
- *
+ * 
  */
+
 
 const MainStack: MainStack[] = [
   {
@@ -53,7 +54,7 @@ const MainStack: MainStack[] = [
 export const BottomNavigation = () => {
   return (
     <Tab.Navigator
-      tabBar={props => <BottomNavigationTab {...props} />}
+      tabBar={(props) => <BottomNavigationTab {...props} />}
       screenOptions={{
         tabBarShowLabel: true,
         unmountOnBlur: false,
@@ -62,7 +63,7 @@ export const BottomNavigation = () => {
       }}
       initialRouteName="HomeScreen"
     >
-      {MainStack.map(stack => {
+      {MainStack.map((stack) => {
         return (
           <Tab.Screen
             key={stack.svgName}
